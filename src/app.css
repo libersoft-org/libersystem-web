@@ -1,0 +1,60 @@
+:root {
+	--background-dark: #111;
+	--background: #222;
+	--background-light: #333;
+	--foreground: #ffd100;
+	--text: #fff;
+	--text-muted: #aaa;
+	--success: #4ade80;
+	--danger: #f87171;
+	--border: rgba(255, 255, 255, 0.1);
+	--border-hover: rgba(255, 255, 255, 0.25);
+	--hover-bg: rgba(255, 255, 255, 0.06);
+	--separator: rgba(255, 255, 255, 0.03);
+	--shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+	--font-main: 'Ubuntu', sans-serif;
+	--font-mono: 'Ubuntu Mono', monospace;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--background-dark);
+	color: var(--text);
+	font-family: var(--font-main);
+	line-height: 1.6;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--foreground);
+	font-weight: bold;
+}
+
+a {
+	color: var(--foreground);
+	text-decoration: none;
+}
+
+::selection {
+	background: var(--foreground);
+	color: var(--background);
+}
+
+.bold {
+	font-weight: bold;
+}

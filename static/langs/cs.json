@@ -1,0 +1,166 @@
+{
+	"menu": {
+		"about": "O projektu",
+		"download": "Stáhnout",
+		"documentation": "Dokumentace",
+		"comparison": "Srovnání",
+		"screenshots": "Snímky obrazovky",
+		"contact": "Kontakt",
+		"toggle": "Přepnout menu",
+		"close": "Zavřít menu",
+		"language": "Jazyk",
+		"selectLanguage": "Vyberte jazyk",
+		"searchLanguage": "Hledat jazyk..."
+	},
+	"hero": {
+		"subtitle": "Mikrojádrový operační systém s kapabilitním bezpečnostním modelem, napsaný v Rustu",
+		"description": "Jádro je malý, bezpečný arbitr. Každý zdroj má jasný typ a je dostupný přes explicitní, nepadělatelnou kapabilitu. Bezpečnost je založena na nejnižších možných oprávněních už z principu návrhu.",
+		"download": "Stáhnout"
+	},
+	"about": {
+		"title": "O projektu",
+		"intro": "{project} je moderní operační systém napsaný od nuly v Rustu. Je postaven na malém, paměťově bezpečném mikrojádru a typovaném objektovém / kapabilitním modelu. Systémové služby a ovladače běží jako izolované, restartovatelné komponenty, které spolu komunikují přes stabilní, typované kontrakty. Jedná se o projekt v rané fázi aktivního vývoje. Projekt je open source a je šířen pod licencí {license}.",
+		"features": {
+			"microkernel": {
+				"title": "Paměťově bezpečné mikrojádro",
+				"description": "Jádro je malý, bezpečný arbitr napsaný v Rustu. Paměťová bezpečnost vychází ze samotného jazyka, nikoli z disciplíny, a jádro zůstává minimální - vše, co může žít mimo něj, žije mimo něj."
+			},
+			"capabilities": {
+				"title": "Bezpečnost založená na kapabilitách",
+				"description": "Každý zdroj má jasný typ a je dostupný přes explicitní, nepadělatelnou kapabilitu, která nese svá vlastní oprávnění. Nejnižší možná oprávnění jsou vynucena samotnou konstrukcí systému, ne konvencí - a kapability lze kdykoli odvolat."
+			},
+			"services": {
+				"title": "Izolované, restartovatelné služby",
+				"description": "Systémové služby a ovladače běží jako izolované komponenty mimo jádro. Spadlý ovladač nebo služba se restartuje, aniž by shodil celý systém - chyby zůstávají uzavřené tam, kde vznikly."
+			},
+			"contracts": {
+				"title": "Typované kontrakty (LSIDL)",
+				"description": "Komponenty spolu komunikují přes stabilní, typované kontrakty popsané v LSIDL - {project} Interface Definition Language - ze kterého se generuje přenosový kodek, klienti, servery i dokumentace."
+			},
+			"liberfs": {
+				"title": "Souborový systém LiberFS",
+				"description": "Nativní souborový systém je copy-on-write, mapovaný po extentech, chráněný kontrolními součty a podporuje snapshoty - navržený pro integritu a konzistenci od prvního bloku."
+			},
+			"smp": {
+				"title": "SMP od základu",
+				"description": "Systém je navržen pro vícejádrový hardware od samého začátku - ne jako dodatečné rozšíření. Plánovač i datové struktury jádra jsou SMP-aware už z návrhu."
+			}
+		}
+	},
+	"download": {
+		"title": "Stáhnout",
+		"description": "{project} je projekt v rané fázi aktivního vývoje. Vydání se publikují na GitHubu, jakmile jsou k dispozici - spolu s kompletními zdrojovými kódy.",
+		"image": "Obraz systému",
+		"sourceCode": "Zdrojové kódy"
+	},
+	"documentation": {
+		"title": "Dokumentace",
+		"description": "Návrhové dokumenty a technické reference, udržované společně se zdrojovým kódem.",
+		"items": {
+			"concept": {
+				"title": "Koncept",
+				"description": "Návrhový dokument systému {project}: objektový a kapabilitní model, IPC, služby a plán vývoje."
+			},
+			"threatModel": {
+				"title": "Model hrozeb",
+				"description": "Proti čemu se systém brání, kde leží bezpečnostní hranice a jak je každá hranice převedena na spustitelnou kontrolu."
+			},
+			"lsidl": {
+				"title": "LSIDL",
+				"description": "{project} Interface Definition Language: jazyk, ve kterém jsou popsány služby a ze kterého se generuje přenosový kodek, klienti, servery a dokumentace."
+			},
+			"systemInterfaces": {
+				"title": "Systémová rozhraní",
+				"description": "Generovaná reference balíku liber:system: každý záznam, výčet a rozhraní služby tak, jak jsou definovány v LSIDL zdrojích."
+			},
+			"liberfs": {
+				"title": "LiberFS",
+				"description": "Nativní souborový systém: copy-on-write, extentově mapovaný, checksumovaný diskový formát se snapshoty a jeho srovnání s FAT, NTFS, ext4, XFS, Btrfs a ZFS."
+			},
+			"debugging": {
+				"title": "Ladění",
+				"description": "Ladicí nástroje: lab harness řídící běžící instanci, měření času a trasování, GDB, zachytávání paketů a testovací sada."
+			},
+			"installation": {
+				"title": "Instalace",
+				"description": "Jak sestavit {project} ze zdrojových kódů a spustit jej ve virtuálním stroji."
+			},
+			"repository": {
+				"title": "Zdrojový kód",
+				"description": "Kompletní zdrojový kód systému {project}, issue tracker a historie vývoje na GitHubu."
+			}
+		}
+	},
+	"screenshots": {
+		"title": "Snímky obrazovky",
+		"open": "Otevřít snímek {index}",
+		"alt": "Snímek {index}",
+		"close": "Zavřít galerii",
+		"prev": "Předchozí obrázek",
+		"next": "Další obrázek"
+	},
+	"comparison": {
+		"title": "Srovnání",
+		"description": "Čím se {project} liší od tradičního unixového operačního systému, jako je Linux.",
+		"aspect": "Hledisko",
+		"rows": {
+			"kernel": {
+				"aspect": "Jádro",
+				"libersystem": "Malé kapabilitní mikrojádro: pouze paměť, plánování, IPC, kapability a bezpečný přístup k hardwaru.",
+				"linux": "Monolitické jádro: ovladače, souborové systémy i síťové stacky běží uvnitř jádra."
+			},
+			"systemApi": {
+				"aspect": "Systémové API",
+				"libersystem": "Jedno typované objektové / kapabilitní API s binární, CBOR, JSON a CLI reprezentací.",
+				"linux": "POSIX syscally plus textové pseudo-soubory (/proc, /sys, /dev) a volání ioctl."
+			},
+			"security": {
+				"aspect": "Bezpečnostní model",
+				"libersystem": "Kapability: proces drží jen práva, která mu byla výslovně předána. Žádný root, žádná ambientní oprávnění.",
+				"linux": "Uživatelé, skupiny a účet root, který smí všechno."
+			},
+			"storage": {
+				"aspect": "Úložiště",
+				"libersystem": "Explicitní svazky: cesta vždy patří právě jednomu svazku a nikdy nemůže potichu sáhnout na jiný disk.",
+				"linux": "Jeden globální adresářový strom, do kterého se disky připojují přes mountpointy."
+			},
+			"resources": {
+				"aspect": "Zdroje",
+				"libersystem": "Každý zdroj je typovaný objekt s jasným rozhraním.",
+				"linux": "\"Všechno je soubor\": procesy, zařízení i nastavení smíchané do netypovaných proudů bajtů."
+			},
+			"drivers": {
+				"aspect": "Ovladače",
+				"libersystem": "Izolované služby v userspace: spadlý ovladač se restartuje, aniž by shodil celý systém.",
+				"linux": "Převážně uvnitř jádra: pád ovladače může shodit celý systém."
+			},
+			"memorySafety": {
+				"aspect": "Paměťová bezpečnost",
+				"libersystem": "Garantovaná samotným jazykem Rust.",
+				"linux": "Napsáno v C: paměťová bezpečnost závisí na disciplíně programátora."
+			},
+			"applications": {
+				"aspect": "Aplikace",
+				"libersystem": "Sandboxované komponenty WebAssembly/WASI: jeden artefakt běží na x86-64, ARM64 i RISC-V.",
+				"linux": "Nativní binárky kompilované pro každou architekturu zvlášť, sandbox je volitelný doplněk."
+			},
+			"compatibility": {
+				"aspect": "Kompatibilita s POSIX",
+				"libersystem": "Volitelná překladová vrstva v userspace (v plánu), nikdy uvnitř jádra.",
+				"linux": "POSIX je nativní, primární API."
+			}
+		}
+	},
+	"contact": {
+		"title": "Kontakt",
+		"getInTouch": "Spojte se s námi",
+		"links": {
+			"telegramChat": "Telegram chat",
+			"telegramAnnouncements": "Telegram oznámení",
+			"facebook": "Facebook skupina"
+		}
+	},
+	"footer": {
+		"by": "od"
+	}
+}

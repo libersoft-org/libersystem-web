@@ -1,0 +1,2 @@
+/* Single source of truth for responsive breakpoints. Used by postcss-custom-media. */
+@custom-media --mobile (max-width: 1100px);

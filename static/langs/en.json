@@ -1,0 +1,166 @@
+{
+	"menu": {
+		"about": "About",
+		"download": "Download",
+		"documentation": "Documentation",
+		"comparison": "Comparison",
+		"screenshots": "Screenshots",
+		"contact": "Contact",
+		"toggle": "Toggle menu",
+		"close": "Close menu",
+		"language": "Language",
+		"selectLanguage": "Select language",
+		"searchLanguage": "Search language..."
+	},
+	"hero": {
+		"subtitle": "A capability-based microkernel operating system written in Rust",
+		"description": "The kernel is a small, safe arbiter. Every resource has a clear type and is reached through an explicit, unforgeable capability. Security is least-privilege by construction.",
+		"download": "Download"
+	},
+	"about": {
+		"title": "About",
+		"intro": "{project} is a modern operating system written from scratch in Rust. It is built around a small, memory-safe microkernel and a typed object / capability model. System services and drivers run as isolated, restartable components that talk to each other over stable, typed contracts. This is an early-stage project under active development. The project is open source and distributed under the {license}.",
+		"features": {
+			"microkernel": {
+				"title": "Memory-safe microkernel",
+				"description": "The kernel is a small, safe arbiter written in Rust. Memory safety comes from the language itself rather than from discipline, and the kernel stays minimal - everything that can live outside of it does."
+			},
+			"capabilities": {
+				"title": "Capability-based security",
+				"description": "Every resource has a clear type and is reached through an explicit, unforgeable capability that carries its own rights. Least privilege is enforced by construction, not by convention - and capabilities can be revoked at any time."
+			},
+			"services": {
+				"title": "Isolated, restartable services",
+				"description": "System services and drivers run as isolated components outside the kernel. A crashed driver or service is restarted without taking the system down, keeping faults contained."
+			},
+			"contracts": {
+				"title": "Typed contracts (LSIDL)",
+				"description": "Components talk to each other over stable, typed contracts described in LSIDL - the {project} Interface Definition Language - from which the wire codec, clients, servers and documentation are generated."
+			},
+			"liberfs": {
+				"title": "LiberFS filesystem",
+				"description": "The native filesystem is copy-on-write, extent-mapped, checksummed and supports snapshots - designed for integrity and consistency from the first block."
+			},
+			"smp": {
+				"title": "SMP from the ground up",
+				"description": "The system is designed for multi-core hardware from the very beginning - not as an afterthought. Scheduling and kernel data structures are SMP-aware by design."
+			}
+		}
+	},
+	"download": {
+		"title": "Download",
+		"description": "{project} is an early-stage project under active development. Releases are published on GitHub as they become available - along with the full source code.",
+		"image": "System image",
+		"sourceCode": "Source code"
+	},
+	"documentation": {
+		"title": "Documentation",
+		"description": "Design documents and technical references, maintained together with the source code.",
+		"items": {
+			"concept": {
+				"title": "Concept",
+				"description": "The {project} design document: object and capability model, IPC, services, and the roadmap."
+			},
+			"threatModel": {
+				"title": "Threat model",
+				"description": "What the system defends against, where the security boundaries are, and how each boundary is turned into an executable check."
+			},
+			"lsidl": {
+				"title": "LSIDL",
+				"description": "The {project} Interface Definition Language: the language services are described in, from which the wire codec, clients, servers, and docs are generated."
+			},
+			"systemInterfaces": {
+				"title": "System interfaces",
+				"description": "The generated reference for the liber:system package: every record, enum and service interface, as defined in the LSIDL sources."
+			},
+			"liberfs": {
+				"title": "LiberFS",
+				"description": "The native filesystem: the copy-on-write, extent-mapped, checksummed and snapshotting on-disk format, and how it compares with FAT, NTFS, ext4, XFS, Btrfs and ZFS."
+			},
+			"debugging": {
+				"title": "Debugging",
+				"description": "The debugging toolbox: the lab harness that drives a live instance, timing and tracing, GDB, packet capture, and the test suite."
+			},
+			"installation": {
+				"title": "Installation",
+				"description": "How to build {project} from source and run it in a virtual machine."
+			},
+			"repository": {
+				"title": "Source code",
+				"description": "The full {project} source code, issue tracker and development history on GitHub."
+			}
+		}
+	},
+	"screenshots": {
+		"title": "Screenshots",
+		"open": "Open screenshot {index}",
+		"alt": "Screenshot {index}",
+		"close": "Close gallery",
+		"prev": "Previous image",
+		"next": "Next image"
+	},
+	"comparison": {
+		"title": "Comparison",
+		"description": "How {project} differs from a traditional Unix-like operating system such as Linux.",
+		"aspect": "Aspect",
+		"rows": {
+			"kernel": {
+				"aspect": "Kernel",
+				"libersystem": "A small capability-based microkernel: only memory, scheduling, IPC, capabilities and safe hardware access.",
+				"linux": "A monolithic kernel: drivers, filesystems and network stacks run inside the kernel."
+			},
+			"systemApi": {
+				"aspect": "System API",
+				"libersystem": "One typed object / capability API with binary, CBOR, JSON and CLI representations.",
+				"linux": "POSIX syscalls plus textual pseudo-files (/proc, /sys, /dev) and ioctl calls."
+			},
+			"security": {
+				"aspect": "Security model",
+				"libersystem": "Capabilities: a process holds only the rights it was explicitly given. No root, no ambient authority.",
+				"linux": "Users, groups and a root account that can do anything."
+			},
+			"storage": {
+				"aspect": "Storage",
+				"libersystem": "Explicit volumes: a path always belongs to exactly one volume and can never silently touch a different disk.",
+				"linux": "A single global directory tree where disks are attached via mount points."
+			},
+			"resources": {
+				"aspect": "Resources",
+				"libersystem": "Every resource is a typed object with a clear interface.",
+				"linux": "\"Everything is a file\": processes, devices and settings blended into untyped byte streams."
+			},
+			"drivers": {
+				"aspect": "Drivers",
+				"libersystem": "Isolated userspace services: a crashed driver is restarted without taking the system down.",
+				"linux": "Mostly inside the kernel: a driver crash can bring the whole system down."
+			},
+			"memorySafety": {
+				"aspect": "Memory safety",
+				"libersystem": "Guaranteed by the Rust language itself.",
+				"linux": "Written in C: memory safety depends on the discipline of the programmer."
+			},
+			"applications": {
+				"aspect": "Applications",
+				"libersystem": "Sandboxed WebAssembly/WASI components: one artifact runs on x86-64, ARM64 and RISC-V.",
+				"linux": "Native binaries compiled per architecture, sandboxing is opt-in."
+			},
+			"compatibility": {
+				"aspect": "POSIX compatibility",
+				"libersystem": "An optional userspace translation layer (planned), never inside the kernel.",
+				"linux": "POSIX is the native, primary API."
+			}
+		}
+	},
+	"contact": {
+		"title": "Contact",
+		"getInTouch": "Get in Touch",
+		"links": {
+			"telegramChat": "Telegram Chat Group",
+			"telegramAnnouncements": "Telegram Announcements",
+			"facebook": "Facebook Group"
+		}
+	},
+	"footer": {
+		"by": "by"
+	}
+}
