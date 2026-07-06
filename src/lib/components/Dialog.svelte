@@ -55,8 +55,8 @@
 
 	.dialog {
 		background: var(--background);
-		border: 1px solid var(--border-hover);
-		border-radius: 12px;
+		border: 1px solid var(--border);
+		border-top: 3px solid var(--foreground);
 		box-shadow: var(--shadow);
 		max-width: 420px;
 		width: 100%;
@@ -91,7 +91,6 @@
 		justify-content: center;
 		width: 3rem;
 		height: 3rem;
-		border-radius: 6px;
 		color: var(--text);
 		cursor: pointer;
 		transition:

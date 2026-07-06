@@ -19,7 +19,8 @@
 	}
 
 	.highlight {
-		background: rgba(255, 209, 0, 0.05);
+		background: rgba(255, 221, 51, 0.06);
+		color: var(--foreground);
 	}
 
 	@media (--mobile) {

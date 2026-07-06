@@ -51,63 +51,31 @@
 		);
 		for (const section of sections) observer.observe(section);
 
-		// Generate triangles
-		const container = document.getElementById('tri-bg')!;
-		const directions = ['up', 'down'] as const;
-		const points: Record<string, string> = {
-			up: '20,5 35,35 5,35',
-			down: '20,35 35,5 5,5',
-		};
-
-		for (let i = 0; i < 100; i++) {
-			const dir = directions[Math.floor(Math.random() * 2)];
-			const rot = Math.round(Math.random() * 60 - 30);
-			const duration = 16 + Math.random() * 16;
-			const delay = -(Math.random() * duration);
-			const x = Math.random() * 100;
-			const y = Math.random() * 100;
-			const size = 20 + Math.random() * 20;
-			// fly in vertex direction (up or down) deflected by rotation
-			const angleRad = (rot * Math.PI) / 180;
-			const dist = 150;
-			const tx = (dir === 'up' ? 1 : -1) * Math.sin(angleRad) * dist;
-			const ty = (dir === 'up' ? -1 : 1) * Math.cos(angleRad) * dist;
-			const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-			svg.setAttribute('viewBox', '0 0 40 40');
-			svg.style.cssText = `position:absolute;width:${size}px;height:${size}px;left:${x}%;top:${y}%;--r:${rot}deg;--tx:${tx.toFixed(1)}vh;--ty:${ty.toFixed(1)}vh;animation:float-tri ${duration}s linear ${delay}s infinite;`;
-			svg.classList.add('tri');
-			const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-			poly.setAttribute('points', points[dir]);
-			svg.appendChild(poly);
-			container.appendChild(svg);
-		}
-
 		return () => observer.disconnect();
 	});
 </script>
 
 <style>
-	.triangles {
+	/* Blueprint grid background: fine lines with stronger lines every 5 cells,
+	   plus a soft yellow glow at the top. */
+	.grid-bg {
 		position: fixed;
 		inset: 0;
 		z-index: -1;
 		pointer-events: none;
-		overflow: hidden;
+		background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+		background-size:
+			28px 28px,
+			28px 28px,
+			140px 140px,
+			140px 140px;
 	}
 
-	.triangles :global(.tri) {
-		fill: none;
-		stroke: rgba(255, 255, 255, 0.12);
-		stroke-width: 1.5;
-	}
-
-	@keyframes -global-float-tri {
-		0% {
-			transform: translate(calc(var(--tx) * -1), calc(var(--ty) * -1)) rotate(var(--r, 0deg));
-		}
-		100% {
-			transform: translate(var(--tx), var(--ty)) rotate(var(--r, 0deg));
-		}
+	.grid-bg::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 221, 51, 0.08), transparent 70%);
 	}
 
 	main {
@@ -115,7 +83,7 @@
 	}
 </style>
 
-<div id="tri-bg" class="triangles"></div>
+<div class="grid-bg"></div>
 <Header {navItems} {activeSection} {menuOpen} onToggleMenu={toggleMenu} onCloseMenu={closeMenu} />
 <main>
 	{@render children()}

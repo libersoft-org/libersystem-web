@@ -24,6 +24,7 @@
 
 <style>
 	.item {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -39,12 +40,31 @@
 			background 0.2s;
 	}
 
+	/* Yellow underline marker for hover/active state. */
+	.item::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -6px;
+		width: 100%;
+		height: 2px;
+		background: var(--foreground);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.2s;
+	}
+
 	.item:hover {
 		color: var(--foreground);
 	}
 
 	.item.active {
 		color: var(--foreground);
+	}
+
+	.item:hover::after,
+	.item.active::after {
+		transform: scaleX(1);
 	}
 
 	.trailing {
@@ -58,8 +78,16 @@
 			border-bottom: 1px solid var(--border);
 		}
 
+		.item::after {
+			display: none;
+		}
+
 		.item:hover {
 			background: var(--hover-bg);
+		}
+
+		.item.active {
+			box-shadow: inset 3px 0 0 var(--foreground);
 		}
 	}
 </style>

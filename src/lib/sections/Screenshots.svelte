@@ -46,21 +46,44 @@
 		gap: 1rem;
 	}
 
+	/* Same panel language as Card: sharp corners + yellow corner brackets. */
 	.thumb {
 		position: relative;
 		aspect-ratio: 16 / 9;
-		overflow: hidden;
-		border-radius: 8px;
 		cursor: pointer;
-		border: 1px solid var(--border-hover);
+		border: 1px solid var(--border);
 		transition:
 			transform 0.2s,
-			box-shadow 0.2s;
+			border-color 0.2s;
+	}
+
+	.thumb::before,
+	.thumb::after {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.thumb::before {
+		top: -1px;
+		left: -1px;
+		border-top: 2px solid var(--foreground);
+		border-left: 2px solid var(--foreground);
+	}
+
+	.thumb::after {
+		bottom: -1px;
+		right: -1px;
+		border-bottom: 2px solid var(--foreground);
+		border-right: 2px solid var(--foreground);
 	}
 
 	.thumb:hover {
 		transform: translateY(-2px);
-		box-shadow: var(--shadow);
+		border-color: var(--border-hover);
 	}
 
 	.thumb img {

@@ -7,7 +7,7 @@
 	.footer {
 		background: var(--background);
 		border-top: 1px solid var(--border);
-		box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.7);
+		border-bottom: 3px solid var(--foreground);
 		padding: 2rem;
 		text-align: center;
 		color: var(--text-muted);

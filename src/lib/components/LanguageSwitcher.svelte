@@ -33,7 +33,6 @@
 		display: inline-flex;
 		align-items: center;
 		padding: 0.25rem;
-		border-radius: 6px;
 		cursor: pointer;
 		border: 1px solid var(--border);
 		background: var(--background-light);
@@ -43,7 +42,7 @@
 	}
 
 	.trigger:hover {
-		border-color: var(--border-hover);
+		border-color: var(--foreground);
 		background: var(--hover-bg);
 	}
 

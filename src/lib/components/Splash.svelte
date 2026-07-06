@@ -31,6 +31,18 @@
 		font-weight: 700;
 		color: var(--foreground);
 		letter-spacing: 1px;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	/* Blinking terminal block cursor, same as the header logo. */
+	.title::after {
+		content: '';
+		width: 0.55em;
+		height: 1em;
+		background: var(--foreground);
+		animation: cursor-blink 1.2s steps(1) infinite;
 	}
 </style>
 

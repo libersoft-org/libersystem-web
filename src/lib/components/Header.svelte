@@ -37,8 +37,8 @@
 		right: 0;
 		z-index: 100;
 		background: var(--background);
+		border-top: 3px solid var(--foreground);
 		border-bottom: 1px solid var(--border);
-		box-shadow: var(--shadow);
 	}
 
 	.topbar-inner {

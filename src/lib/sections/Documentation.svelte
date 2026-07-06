@@ -26,25 +26,50 @@
 	.section-desc {
 		text-align: center;
 		color: var(--text-muted);
-		margin-bottom: 3rem;
+		margin: 0 auto 3rem;
 		font-size: 1.05rem;
+		max-width: 800px;
 	}
 
+	/* Same panel language as Card: sharp corners + yellow corner brackets. */
 	.doc-card {
+		position: relative;
 		display: block;
 		background: var(--background);
-		border: 1px solid var(--border-hover);
-		border-radius: 12px;
+		border: 1px solid var(--border);
 		padding: 2rem;
 		color: inherit;
 		transition:
-			transform 0.2s,
-			box-shadow 0.2s;
+			border-color 0.2s,
+			transform 0.2s;
+	}
+
+	.doc-card::before,
+	.doc-card::after {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		pointer-events: none;
+	}
+
+	.doc-card::before {
+		top: -1px;
+		left: -1px;
+		border-top: 2px solid var(--foreground);
+		border-left: 2px solid var(--foreground);
+	}
+
+	.doc-card::after {
+		bottom: -1px;
+		right: -1px;
+		border-bottom: 2px solid var(--foreground);
+		border-right: 2px solid var(--foreground);
 	}
 
 	.doc-card:hover {
+		border-color: var(--border-hover);
 		transform: translateY(-3px);
-		box-shadow: var(--shadow);
 		opacity: 1;
 	}
 

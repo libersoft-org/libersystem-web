@@ -19,7 +19,7 @@
 	},
 	"about": {
 		"title": "About",
-		"intro": "{project} is a modern operating system written from scratch in Rust. It is built around a small, memory-safe microkernel and a typed object / capability model. System services and drivers run as isolated, restartable components that talk to each other over stable, typed contracts. This is an early-stage project under active development. The project is open source and distributed under the {license}.",
+		"intro": "{project} is a modern operating system written from scratch in Rust. It is built around a small, memory-safe microkernel and a typed object / capability model. System services and drivers run as isolated, restartable components that talk to each other over stable, typed contracts. The project is open source and distributed under the {license}.",
 		"features": {
 			"microkernel": {
 				"title": "Memory-safe microkernel",
@@ -49,7 +49,7 @@
 	},
 	"download": {
 		"title": "Download",
-		"description": "{project} is an early-stage project under active development. Releases are published on GitHub as they become available - along with the full source code.",
+		"description": "Releases are published on GitHub as they become available - along with the full source code.",
 		"image": "System image",
 		"sourceCode": "Source code"
 	},
@@ -153,7 +153,7 @@
 	},
 	"contact": {
 		"title": "Contact",
-		"getInTouch": "Get in Touch",
+		"getInTouch": "Get in touch",
 		"links": {
 			"telegramChat": "Telegram Chat Group",
 			"telegramAnnouncements": "Telegram Announcements",

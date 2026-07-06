@@ -17,6 +17,18 @@
 		font-weight: 700;
 		letter-spacing: 2px;
 		margin-bottom: 0.5rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	/* Blinking terminal block cursor after the title. */
+	.hero-title::after {
+		content: '';
+		width: 0.55em;
+		height: 1em;
+		background: var(--foreground);
+		animation: cursor-blink 1.2s steps(1) infinite;
 	}
 
 	.hero-subtitle {

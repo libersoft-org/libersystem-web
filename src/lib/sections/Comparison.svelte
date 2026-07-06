@@ -18,8 +18,9 @@
 	.section-desc {
 		text-align: center;
 		color: var(--text-muted);
-		margin-bottom: 3rem;
+		margin: 0 auto 3rem;
 		font-size: 1.05rem;
+		max-width: 800px;
 	}
 
 	/* Desktop view: full table. Hidden on mobile. */

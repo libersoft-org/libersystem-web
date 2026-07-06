@@ -19,7 +19,7 @@
 	},
 	"about": {
 		"title": "O projektu",
-		"intro": "{project} je moderní operační systém napsaný od nuly v Rustu. Je postaven na malém, paměťově bezpečném mikrojádru a typovaném objektovém / kapabilitním modelu. Systémové služby a ovladače běží jako izolované, restartovatelné komponenty, které spolu komunikují přes stabilní, typované kontrakty. Jedná se o projekt v rané fázi aktivního vývoje. Projekt je open source a je šířen pod licencí {license}.",
+		"intro": "{project} je moderní operační systém napsaný od nuly v Rustu. Je postaven na malém, paměťově bezpečném mikrojádru a typovaném objektovém / kapabilitním modelu. Systémové služby a ovladače běží jako izolované, restartovatelné komponenty, které spolu komunikují přes stabilní, typované kontrakty. Projekt je open source a je šířen pod licencí {license}.",
 		"features": {
 			"microkernel": {
 				"title": "Paměťově bezpečné mikrojádro",
@@ -49,7 +49,7 @@
 	},
 	"download": {
 		"title": "Stáhnout",
-		"description": "{project} je projekt v rané fázi aktivního vývoje. Vydání se publikují na GitHubu, jakmile jsou k dispozici - spolu s kompletními zdrojovými kódy.",
+		"description": "Vydání se publikují na GitHubu, jakmile jsou k dispozici - spolu s kompletními zdrojovými kódy.",
 		"image": "Obraz systému",
 		"sourceCode": "Zdrojové kódy"
 	},
