@@ -33,7 +33,15 @@
 		letter-spacing: 1px;
 		display: inline-flex;
 		align-items: center;
+		justify-content: center;
 		gap: 0.5rem;
+		max-width: 100%;
+	}
+
+	@media (--mobile) {
+		.title {
+			font-size: 2rem;
+		}
 	}
 
 	/* Blinking terminal block cursor, same as the header logo. */

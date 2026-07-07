@@ -26,6 +26,8 @@
 
 	.section-title {
 		display: inline-block;
+		max-width: 100%;
+		overflow-wrap: break-word;
 		font-size: 2.5rem;
 		text-transform: uppercase;
 		letter-spacing: 2px;
@@ -33,6 +35,17 @@
 		text-decoration-color: var(--foreground);
 		text-decoration-thickness: 4px;
 		text-underline-offset: 0.2em;
+	}
+
+	@media (--mobile) {
+		.section {
+			padding: 4rem 1.25rem;
+		}
+
+		.section-title {
+			font-size: 1.75rem;
+			letter-spacing: 1px;
+		}
 	}
 </style>
 
