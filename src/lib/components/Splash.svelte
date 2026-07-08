@@ -27,7 +27,7 @@
 	}
 
 	.title {
-		font-size: 3rem;
+		font-size: 2rem;
 		font-weight: 700;
 		color: var(--foreground);
 		letter-spacing: 1px;
@@ -36,12 +36,6 @@
 		justify-content: center;
 		gap: 0.5rem;
 		max-width: 100%;
-	}
-
-	@media (--mobile) {
-		.title {
-			font-size: 2rem;
-		}
 	}
 
 	/* Blinking terminal block cursor, same as the header logo. */
