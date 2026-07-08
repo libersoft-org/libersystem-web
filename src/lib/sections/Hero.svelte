@@ -20,7 +20,6 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		max-width: 100%;
 	}
 
 	/* Blinking terminal block cursor after the title. */
@@ -51,21 +50,6 @@
 		gap: 1rem;
 		justify-content: center;
 		flex-wrap: wrap;
-	}
-
-	@media (--mobile) {
-		.hero {
-			padding: 5rem 1.25rem 3rem;
-		}
-
-		.hero-title {
-			font-size: 2.25rem;
-			letter-spacing: 1px;
-		}
-
-		.hero-subtitle {
-			font-size: 1.2rem;
-		}
 	}
 </style>
 

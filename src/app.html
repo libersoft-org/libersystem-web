@@ -43,6 +43,40 @@
 			gtag('js', new Date());
 			gtag('config', 'G-SJ521R10XV');
 		</script>
+		<style>
+			/* Critical loading-screen styles: inlined so the splash is fixed and
+			   centered from the first paint, before the app CSS is loaded. */
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				overflow-x: hidden;
+				background: #1a1a1a;
+			}
+			.splash {
+				position: fixed;
+				inset: 0;
+				z-index: 9999;
+				background: #1a1a1a;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 2rem;
+			}
+			.splash .title {
+				font-family: 'Ubuntu', sans-serif;
+				font-size: 3rem;
+				font-weight: 700;
+				color: #ffdd33;
+				letter-spacing: 1px;
+			}
+			@media (max-width: 1100px) {
+				.splash .title {
+					font-size: 2rem;
+				}
+			}
+		</style>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-prerender="true">
