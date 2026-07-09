@@ -34,6 +34,12 @@
 		text-decoration-thickness: 4px;
 		text-underline-offset: 0.2em;
 	}
+
+	@media (--mobile) {
+		.section-title {
+			font-size: 1.5rem;
+		}
+	}
 </style>
 
 <section {id} class="section">

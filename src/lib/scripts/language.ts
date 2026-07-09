@@ -330,7 +330,9 @@ function pickInitialLanguage(): string {
 export const currentLanguage = writable<string>(pickInitialLanguage());
 
 // Translations start empty and are populated by initLanguages() / setLanguage().
-// Until then, t() returns '{key}' placeholders (the splash screen covers this phase).
+// Until then, t() returns empty strings: '{key}' placeholders are long unbreakable
+// tokens that would widen the page behind the splash screen (horizontal overflow
+// on mobile). The splash covers this phase visually.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const translations = writable<any>({});
 
@@ -342,10 +344,12 @@ function getNestedValue(obj: any, path: string): string | undefined {
 }
 
 // Reactive translation function - use as $t('common.back') or $t('key', { name: 'foo' }) in components.
-// Returns the translation value or '{key}' fallback if missing.
+// Returns the translation value, or '{key}' fallback if missing, or '' before the first language loads.
 // When vars are provided, replaces {placeholder} tokens with values.
 export const t: Readable<(key: string, vars?: Record<string, string>) => string> = derived(translations, $translations => {
+	const loaded = Object.keys($translations).length > 0;
 	return (key: string, vars?: Record<string, string>): string => {
+		if (!loaded) return '';
 		const text = getNestedValue($translations, key) ?? getNestedValue(langCache[DEFAULT_LANGUAGE], key) ?? `{${key}}`;
 		return vars ? text.replace(/\{(\w+)\}/g, (match, k) => vars[k] ?? match) : text;
 	};
@@ -354,6 +358,7 @@ export const t: Readable<(key: string, vars?: Record<string, string>) => string>
 // Function for translations outside components - use as tt('common.back') or tt('key', { name: 'foo' })
 export function tt(key: string, vars?: Record<string, string>): string {
 	const current = get(translations);
+	if (Object.keys(current).length === 0) return '';
 	const text = getNestedValue(current, key) ?? getNestedValue(langCache[DEFAULT_LANGUAGE], key) ?? `{${key}}`;
 	return vars ? text.replace(/\{(\w+)\}/g, (match, k) => vars[k] ?? match) : text;
 }

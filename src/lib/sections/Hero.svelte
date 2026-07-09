@@ -13,7 +13,7 @@
 	}
 
 	.hero-title {
-		font-size: 3rem;
+		font-size: 4rem;
 		font-weight: 700;
 		letter-spacing: 2px;
 		margin-bottom: 0.5rem;
@@ -50,6 +50,12 @@
 		gap: 1rem;
 		justify-content: center;
 		flex-wrap: wrap;
+	}
+
+	@media (--mobile) {
+		.hero-title {
+			font-size: 2rem;
+		}
 	}
 </style>
 

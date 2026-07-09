@@ -67,6 +67,12 @@
 		-webkit-mask-repeat: no-repeat;
 		-webkit-mask-position: center;
 	}
+
+	@media (--mobile) {
+		.btn {
+			font-size: 1.4rem;
+		}
+	}
 </style>
 
 <a {href} class="btn" target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}>
