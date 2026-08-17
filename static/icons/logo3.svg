@@ -2,15 +2,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 527.05 300.52">
 	<defs>
 		<style>
-			.cls-1{
-				fill: #fd3;
+			.cls-1 {
+				fill: #222;
 			}
 
-			.cls-2{
+			.cls-2 {
 				fill: none;
 			}
 
-   .cls-3{
+   .cls-3 {
 				fill: #222;
 			}
 		</style>
