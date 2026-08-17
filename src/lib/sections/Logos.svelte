@@ -2,7 +2,7 @@
 	import { t } from '$lib/scripts/language.ts';
 	import Section from '$lib/components/Section.svelte';
 	import Gallery from '$lib/components/Gallery.svelte';
-	const images = ['/icons/logo.svg', '/icons/logo2.svg', '/icons/logo3.svg', '/icons/logo-yellow.svg', '/icons/logo-yellow2.svg', '/icons/logo-yellow3.svg'];
+	const images = ['/icons/logo-black.svg', '/icons/logo-black2.svg', '/icons/logo-black3.svg', '/icons/logo-yellow.svg', '/icons/logo-yellow2.svg', '/icons/logo-yellow3.svg'];
 	// The yellow variants are meant for dark surfaces, the rest for light ones.
 	const backgrounds = ['#ffffff', '#ffffff', '#ffffff', '#000000', '#000000', '#000000'];
 	let galleryIndex = $state(-1);
