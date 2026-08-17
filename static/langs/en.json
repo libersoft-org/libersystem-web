@@ -5,6 +5,7 @@
 		"documentation": "Documentation",
 		"comparison": "Comparison",
 		"screenshots": "Screenshots",
+		"logos": "Logo",
 		"contact": "Contact",
 		"toggle": "Toggle menu",
 		"close": "Close menu",
@@ -98,6 +99,11 @@
 		"close": "Close gallery",
 		"prev": "Previous image",
 		"next": "Next image"
+	},
+	"logos": {
+		"title": "Logo",
+		"open": "Open logo {index}",
+		"alt": "Logo {index}"
 	},
 	"comparison": {
 		"title": "Comparison",

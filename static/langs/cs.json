@@ -5,6 +5,7 @@
 		"documentation": "Dokumentace",
 		"comparison": "Srovnání",
 		"screenshots": "Snímky obrazovky",
+		"logos": "Logo",
 		"contact": "Kontakt",
 		"toggle": "Přepnout menu",
 		"close": "Zavřít menu",
@@ -98,6 +99,11 @@
 		"close": "Zavřít galerii",
 		"prev": "Předchozí obrázek",
 		"next": "Další obrázek"
+	},
+	"logos": {
+		"title": "Logo",
+		"open": "Otevřít logo {index}",
+		"alt": "Logo {index}"
 	},
 	"comparison": {
 		"title": "Srovnání",

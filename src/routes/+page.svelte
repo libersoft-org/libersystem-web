@@ -3,6 +3,7 @@
 	import About from '$lib/sections/About.svelte';
 	import Download from '$lib/sections/Download.svelte';
 	import Screenshots from '$lib/sections/Screenshots.svelte';
+	import Logos from '$lib/sections/Logos.svelte';
 	import Documentation from '$lib/sections/Documentation.svelte';
 	import Comparison from '$lib/sections/Comparison.svelte';
 	import Contact from '$lib/sections/Contact.svelte';
@@ -24,6 +25,7 @@
 <About />
 <Download />
 <Screenshots />
+<Logos />
 <Documentation />
 <Comparison />
 <Contact />

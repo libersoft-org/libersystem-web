@@ -17,6 +17,7 @@
 		{ labelKey: 'menu.about', href: '/#about', id: 'about' },
 		{ labelKey: 'menu.download', href: '/#download', id: 'download' },
 		{ labelKey: 'menu.screenshots', href: '/#screenshots', id: 'screenshots' },
+		{ labelKey: 'menu.logos', href: '/#logos', id: 'logos' },
 		{ labelKey: 'menu.documentation', href: '/#documentation', id: 'documentation' },
 		{ labelKey: 'menu.comparison', href: '/#comparison', id: 'comparison' },
 		{ labelKey: 'menu.contact', href: '/#contact', id: 'contact' },

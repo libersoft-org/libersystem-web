@@ -7,8 +7,12 @@
 		onClose: () => void;
 		onPrev: () => void;
 		onNext: () => void;
+		altKey?: string;
+		// Optional per-image plate colour, for images that need a specific backdrop (logos).
+		backgrounds?: string[];
 	}
-	let { images, index, onClose, onPrev, onNext }: Props = $props();
+	let { images, index, onClose, onPrev, onNext, altKey = 'screenshots.alt', backgrounds }: Props = $props();
+	let background = $derived(backgrounds?.[index]);
 
 	function handleKey(e: KeyboardEvent): void {
 		if (e.key === 'Escape') onClose();
@@ -60,6 +64,19 @@
 		max-height: 90vh;
 		object-fit: contain;
 		border-radius: 8px;
+	}
+
+	/* SVGs carry only a viewBox, so they have no intrinsic pixel size and would
+	   collapse to zero width in this flex layout - give the plate a definite box. */
+	.image-wrap.plate {
+		width: min(80vw, 900px);
+	}
+
+	.image-wrap.plate img {
+		width: 100%;
+		height: auto;
+		max-height: 80vh;
+		padding: 2rem;
 	}
 
 	.nav-btn {
@@ -145,8 +162,8 @@
 
 <svelte:window onkeydown={handleKey} />
 <div class="backdrop" role="button" tabindex="-1" aria-label={$t('screenshots.close')} onclick={handleBackdropClick} onkeydown={handleBackdropKey}>
-	<div class="image-wrap">
-		<img src={images[index]} alt={$t('screenshots.alt', { index: String(index + 1) })} />
+	<div class="image-wrap" class:plate={!!background}>
+		<img src={images[index]} alt={$t(altKey, { index: String(index + 1) })} style:background />
 	</div>
 	<div class="nav-btn nav-prev" role="button" tabindex="0" aria-label={$t('screenshots.prev')} onclick={onPrev} onkeydown={handlePrevKey}>
 		<Icon img="/icons/chevron-left.svg" alt="" size="28px" colorVariable="--text" />
