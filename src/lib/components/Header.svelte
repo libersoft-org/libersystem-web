@@ -42,7 +42,7 @@
 	}
 
 	.topbar-inner {
-		max-width: 1200px;
+		max-width: 1600px;
 		margin: 0 auto;
 		padding: 0 2rem;
 		height: 64px;
@@ -57,6 +57,15 @@
 		font-weight: 700;
 		color: var(--foreground);
 		letter-spacing: 1px;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+	}
+
+	.logo img {
+		height: 32px;
+		width: auto;
+		display: block;
 	}
 
 	.right {
@@ -117,7 +126,10 @@
 
 <header class="topbar">
 	<div class="topbar-inner">
-		<a href="/" class="logo">{PROJECT_NAME}</a>
+		<a href="/" class="logo">
+			<img src="/icons/logo-yellow.svg" alt="" draggable="false" />
+			{PROJECT_NAME}
+		</a>
 		<div class="right">
 			<Menu {navItems} {activeSection} open={menuOpen} onClose={onCloseMenu} />
 			<div class="hamburger" class:active={menuOpen} role="button" tabindex="0" aria-label={$t('menu.toggle')} aria-expanded={menuOpen} onclick={onToggleMenu} onkeydown={handleHamburgerKey}>

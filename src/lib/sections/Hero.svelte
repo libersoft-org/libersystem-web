@@ -12,6 +12,14 @@
 		margin: 0 auto;
 	}
 
+	.hero-logo {
+		width: 100%;
+		max-width: 240px;
+		height: auto;
+		margin: 0 auto 1.5rem;
+		display: block;
+	}
+
 	.hero-title {
 		font-size: 4rem;
 		font-weight: 700;
@@ -53,6 +61,11 @@
 	}
 
 	@media (--mobile) {
+		.hero-logo {
+			max-width: 120px;
+			margin-bottom: 1rem;
+		}
+
 		.hero-title {
 			font-size: 2rem;
 		}
@@ -60,6 +73,7 @@
 </style>
 
 <div class="hero">
+	<img class="hero-logo" src="/icons/logo-yellow.svg" alt={PROJECT_NAME} draggable="false" />
 	<h1 class="hero-title">{PROJECT_NAME}</h1>
 	<p class="hero-subtitle">{$t('hero.subtitle')}</p>
 	<p class="hero-desc">{$t('hero.description')}</p>

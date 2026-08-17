@@ -18,12 +18,20 @@
 		align-items: center;
 		justify-content: center;
 		gap: 2rem;
+		padding: 2rem;
 		transition: opacity 0.25s ease;
 	}
 
 	.splash.hidden {
 		opacity: 0;
 		pointer-events: none;
+	}
+
+	.logo {
+		width: 100%;
+		max-width: 120px;
+		height: auto;
+		display: block;
 	}
 
 	.title {
@@ -49,6 +57,7 @@
 </style>
 
 <div class="splash" class:hidden={!show} aria-hidden={!show}>
+	<img class="logo" src="/icons/logo-yellow.svg" alt="" draggable="false" />
 	<div class="title">{PROJECT_NAME}</div>
 	<Spinner size="48px" />
 </div>

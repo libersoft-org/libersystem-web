@@ -5,6 +5,7 @@ find . -type f -executable \
 -not -path "*/build/*" \
 -not -path "*/binaries/*" \
 -not -path "*/.git/*" \
+-not -path "*/.vscode/hunkwise/*" \
 -not -path "*/.husky/*" \
 -not -path "*/.githooks/*" \
 -not -name "*.sh" \
